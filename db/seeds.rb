@@ -8,6 +8,7 @@
 
 Artist.destroy_all
 Song.destroy_all
+Photo.destroy_all
 
 #ARTISTS
 adele = Artist.create!(
@@ -91,3 +92,13 @@ Song.create!([
   artist: sia
 }
 ])
+
+#PHOTOS
+
+photo1 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dqjubqikq/image/upload/v1510427557/adele-hero-620173502_gbhquv.jpg", artist: Artist.first)
+
+photo2 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dqjubqikq/image/upload/v1510427554/1421675747774_oyqazw.jpg", artist: Artist.second)
+
+photo3 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dqjubqikq/image/upload/v1510427558/download_cfajpj.jpg", artist: Artist.third)
+
+photo4 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dqjubqikq/image/upload/v1510427559/17_58_sia-song-01-ffe97de8-8662-4956-94f5-f8e8f894191f_kws9op.jpg", artist: Artist.fourth)
