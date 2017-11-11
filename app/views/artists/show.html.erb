@@ -2,7 +2,13 @@
 
 <h2>List of songs:</h2>
 
+<% @artist.songs.each do |song| %>
+  <li>
+    <%= link_to song.title %>
+  </li>
+<% end %>
+
 <p>Age: <%= @artist.age %></p>
 <p>Country: <%= @artist.country %></p>
 
-<%= link_to "[Back]", root_path %>
+<%= link_to "Back", root_path %>
