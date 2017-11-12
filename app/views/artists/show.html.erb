@@ -1,17 +1,17 @@
 <h1><%= @artist.name %></h1>
 
-<h2>List of songs:</h2>
-
-<% @artist.songs.each do |song| %>
-  <li>
-    <%= song.title %>
-  </li>
-  <%= link_to "Delete", artist_song_path(@artist,song), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%>
-</div>
-<% end %>
-
 <p>Age: <%= @artist.age %></p>
 <p>Country: <%= @artist.country %></p>
+
+<h3>List of songs:</h3>
+
+<% @artist.songs.each do |song| %>
+  <p>Song: <%= song.title %></p>
+  <p>Album: <%= song.album %></p>
+  <%= link_to "Delete song", artist_song_path(@artist,song), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%>
+<% end %>
+
+<hr />
 
 <div class="col-md-3 right">
   <%= link_to "Back", root_path %>
