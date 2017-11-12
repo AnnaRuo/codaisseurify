@@ -53,6 +53,7 @@ gem 'cloudinary', '1.2.3'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
+   gem 'factory_girl_rails', '4.7.0'
 end
 
 group :test do
