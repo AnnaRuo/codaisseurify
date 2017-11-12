@@ -6,10 +6,15 @@
   <li>
     <%= song.title %>
   </li>
+  <%= link_to "Delete", artist_song_path(@artist,song), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%>
+</div>
 <% end %>
 
 <p>Age: <%= @artist.age %></p>
 <p>Country: <%= @artist.country %></p>
 
-<%= link_to "Back", root_path %>
-<%= link_to "Add new song", new_artist_song_path(@artist.id), class: "btn btn-primary" %>
+<div class="col-md-3 right">
+  <%= link_to "Back", root_path %>
+  <%= link_to "Add new song", new_artist_song_path(@artist.id), class: "btn btn-primary" %>
+  <%= link_to "Delete Artist", artist_path(@artist), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"%>
+</div>

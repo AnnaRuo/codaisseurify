@@ -24,6 +24,12 @@ class SongsController < ApplicationController
     end
   end
 
+  def destroy
+    @song = Song.find(params[:id])
+    @song.destroy
+    redirect_to root_path
+  end
+
   def song_params
     params.require(:song).permit(:title, :album)
   end
