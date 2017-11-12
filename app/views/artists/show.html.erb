@@ -12,3 +12,4 @@
 <p>Country: <%= @artist.country %></p>
 
 <%= link_to "Back", root_path %>
+<%= link_to "Add new song", new_artist_song_path(@artist.id), class: "btn btn-primary" %>

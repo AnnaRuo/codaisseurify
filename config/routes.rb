@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root "artists#index"
+  root to: "artists#index"
 
-  get "artists"     => "artists#index"
-  get "artists/:id" => "artists#show", as: :artist
+  resources :artists do
+    resources :songs
+  end
 end
