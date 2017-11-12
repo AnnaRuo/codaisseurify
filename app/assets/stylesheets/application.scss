@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+ // application.scss
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+.centering {
+  text-align: left;
+  padding: 30px;
+  margin-left: 5%;
+}

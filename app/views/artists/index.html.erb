@@ -1,13 +1,15 @@
-
+<div class= "centering">
 <h1>Artists</h1>
 
 <% @artists.each do |artist| %>
   <li>
     <%= link_to artist.name, artist_path(artist.id) %>
-
+      <div class="image">
       <% artist.photos.each do |photo| %>
       <hr />
       <%= image_tag photo.image.thumbnail %>
       <% end %>
+      </div>
   </li>
 <% end %>
+</div>

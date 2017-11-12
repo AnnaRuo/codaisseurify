@@ -1,20 +1,23 @@
-<h1><%= @artist.name %></h1>
+<div class= "centering">
+  <h1><%= @artist.name %></h1>
 
-<p>Age: <%= @artist.age %></p>
-<p>Country: <%= @artist.country %></p>
+  <p>Age: <%= @artist.age %></p>
+  <p>Country: <%= @artist.country %></p>
 
-<h3>List of songs:</h3>
+  <h3>List of songs:</h3>
 
-<% @artist.songs.each do |song| %>
-  <p>Song: <%= song.title %></p>
-  <p>Album: <%= song.album %></p>
-  <%= link_to "Delete song", artist_song_path(@artist,song), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%>
-<% end %>
+  <% @artist.songs.each do |song| %>
+    <p>Song: <%= song.title %></p>
+    <p>Album: <%= song.album %></p>
+    <%= link_to "Delete song", artist_song_path(@artist,song), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%>
+  <% end %>
 
-<hr />
+  <hr />
 
-<div class="col-md-3 right">
-  <%= link_to "Back", root_path %>
-  <%= link_to "Add new song", new_artist_song_path(@artist.id), class: "btn btn-primary" %>
-  <%= link_to "Delete Artist", artist_path(@artist), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"%>
+
+    <%= link_to "Back", root_path, class: "btn btn-primary" %>
+    <%= link_to "Add new song", new_artist_song_path(@artist.id), class: "btn btn-primary" %>
+
+    <%= link_to "Delete Artist", artist_path(@artist), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%>
+  
 </div>
