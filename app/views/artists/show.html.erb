@@ -8,13 +8,17 @@
 
   <div id="songList">
     <% @artist.songs.each do |song| %>
+    <div id="songAlbum "data-id="<%= song.id %>">
       <p>Song: <%= song.title %></p>
       <p>Album: <%= song.album %></p>
-      <%= link_to "Delete song", artist_song_path(@artist,song), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%>
+        <input type="button" value="Delete Song" onclick="deleteSong(<%= song.id %>)"/>
+    </div>
+      <!-- <%= link_to "Delete song", artist_song_path(@artist,song), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%> -->
     <% end %>
   </div>
-  <hr />
 
+
+  <hr />
 
     <%= link_to "Back", root_path, class: "btn btn-primary" %>
 

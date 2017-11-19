@@ -17,13 +17,25 @@ function createSong(new_song_title, new_song_album) {
 
     var pSong = $('<p> Song: ' + new_song_title + '</p>')
     var pAlbum = $('<p> Album: ' + new_song_album + '</p>')
-    // var button = $('<a data-confirm></a data-confirm>')
+    var button = $('<div></div>')
 
     $('#songList').append(pSong);
     $('#songList').append(pAlbum);
-    // $('#songList').append(button);
-
+    $('#songList').append(button);
   })
+}
+
+function deleteSong(songId) {
+console.log('helloloooo:'+ songId);
+  $.ajax({
+    type: "DELETE",
+    url: "/api/artists/1/songs/" +songId,
+    contentType: "application/json",
+    dataType: "json"
+  })
+  .done(function(data) {
+    $('div[data-id="' + songId + '"]').remove();
+  });
 }
 
 function submitSong(event) {

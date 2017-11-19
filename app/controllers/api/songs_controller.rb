@@ -31,6 +31,15 @@ class Api::SongsController < ApplicationController
     end
   end
 
+  def destroy
+    song = Song.find(params[:id])
+    song.destroy
+
+    render status: 200, json: {
+      message: "Song successfully deleted"
+    }.to_json
+  end
+
   def song_params
     params.require(:song).permit(:title, :album)
   end
