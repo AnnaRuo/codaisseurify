@@ -13,7 +13,7 @@ function createSong(new_song_title, new_song_album) {
   .done(function(data){
     console.log(data);
 
-    var songId = data.id; //server
+    var songId = data.song.id; //server
 
 
     var pSong = $('<p> Song: ' + new_song_title + '</p>')
