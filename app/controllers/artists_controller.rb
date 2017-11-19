@@ -8,6 +8,11 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
   end
 
+  def new
+    @song = Song.new
+    @artist = params
+  end
+
   def destroy
     @artist = Artist.find(params[:id])
     @artist.destroy

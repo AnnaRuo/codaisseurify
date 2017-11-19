@@ -16,8 +16,11 @@
 
 
     <%= link_to "Back", root_path, class: "btn btn-primary" %>
-    <%= link_to "Add new song", new_artist_song_path(@artist.id), class: "btn btn-primary" %>
 
     <%= link_to "Delete Artist", artist_path(@artist), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%>
-  
 </div>
+
+  <%= form_tag do %>
+    <p>add song:<p/>
+    <%= text_field_tag(:title) %>
+  <% end %>
