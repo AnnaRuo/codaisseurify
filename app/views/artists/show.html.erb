@@ -6,12 +6,13 @@
 
   <h3>List of songs:</h3>
 
-  <% @artist.songs.each do |song| %>
-    <p>Song: <%= song.title %></p>
-    <p>Album: <%= song.album %></p>
-    <%= link_to "Delete song", artist_song_path(@artist,song), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%>
-  <% end %>
-
+  <div id="songList">
+    <% @artist.songs.each do |song| %>
+      <p>Song: <%= song.title %></p>
+      <p>Album: <%= song.album %></p>
+      <%= link_to "Delete song", artist_song_path(@artist,song), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%>
+    <% end %>
+  </div>
   <hr />
 
 
@@ -20,7 +21,16 @@
     <%= link_to "Delete Artist", artist_path(@artist), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%>
 </div>
 
-  <%= form_tag do %>
-    <p>add song:<p/>
-    <%= text_field_tag(:title) %>
+  <div id="addSong">
+    <%= form_tag do %>
+      <p>Add Song:<p/>
+      <%= text_field_tag(:title) %>
+      <p>Add Album:<p/>
+      <%= text_field_tag(:album) %>
+
+    <div class="actions">
+      <%= submit_tag "Save", class: "btn btn-primary" %>
+    </div>
+
+  </div>
   <% end %>
