@@ -13,7 +13,7 @@ function createSong(new_song_title, new_song_album) {
   .done(function(data){
     console.log(data);
 
-    var songId = data.id;
+    var songId = data.id; //server
 
     var pSong = $('<p> Song: ' + new_song_title + '</p>')
     var pAlbum = $('<p> Album: ' + new_song_album + '</p>')
@@ -35,6 +35,15 @@ console.log('helloloooo:'+ songId);
   })
   .done(function(data) {
     $('div[data-id="' + songId + '"]').remove();
+  });
+}
+
+function deleteAllSongs() {
+  console.log("Hello")
+  $(".songAlbum").each(function(i){
+
+    console.log("Hiya" + $(this).attr('data-id'))
+    deleteSong($(this).attr('data-id'));
   });
 }
 

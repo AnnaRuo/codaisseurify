@@ -8,21 +8,21 @@
 
   <div id="songList">
     <% @artist.songs.each do |song| %>
-    <div id="songAlbum "data-id="<%= song.id %>">
-      <p>Song: <%= song.title %></p>
-      <p>Album: <%= song.album %></p>
-        <input type="button" value="Delete Song" onclick="deleteSong(<%= song.id %>)"/>
-    </div>
-      <!-- <%= link_to "Delete song", artist_song_path(@artist,song), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%> -->
+      <div class="songAlbum "data-id="<%= song.id %>">
+        <p>Song: <%= song.title %></p>
+        <p>Album: <%= song.album %></p>
+          <input type="button" value="Delete Song" onclick="deleteSong(<%= song.id %>)"/>
+      </div>
     <% end %>
   </div>
-
 
   <hr />
 
     <%= link_to "Back", root_path, class: "btn btn-primary" %>
 
     <%= link_to "Delete Artist", artist_path(@artist), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%>
+
+    <input type="button" value="Delete All Songs" onclick="deleteAllSongs()"/>
 </div>
 
   <div id="addSong">
@@ -35,6 +35,5 @@
     <div class="actions">
       <%= submit_tag "Save", class: "btn btn-primary" %>
     </div>
-
   </div>
   <% end %>
