@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   end
   namespace :api do
     resources :artists
+    resources :songs
   end
 end
