@@ -64,3 +64,4 @@ gem 'rails_12factor', group: :production
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails', '~> 4.3.1'
+gem 'active_model_serializers', '~> 0.10.0'
