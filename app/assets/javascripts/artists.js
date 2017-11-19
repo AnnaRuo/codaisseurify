@@ -15,13 +15,19 @@ function createSong(new_song_title, new_song_album) {
 
     var songId = data.id; //server
 
+
     var pSong = $('<p> Song: ' + new_song_title + '</p>')
     var pAlbum = $('<p> Album: ' + new_song_album + '</p>')
     var button = $('<div></div>')
 
-    $('#songList').append(pSong);
-    $('#songList').append(pAlbum);
-    $('#songList').append(button);
+    var songAlbum = $('<div class="songAlbum " data-id="' + songId + '"</div>');
+
+    songAlbum.append(pSong);
+    songAlbum.append(pAlbum);
+    songAlbum.append(button);
+
+
+    $('#songList').append(songAlbum);
   })
 }
 
